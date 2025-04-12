@@ -21,19 +21,19 @@ export const GeminiEffect = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("sticky top-80", className)}>
-      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
-        {title || `INGIN MENJADI PROGRAMMER HANDAL NAMUN ENGGAN MENGODING`}
+    <div className={cn("sticky md:top-32 top-64", className)}>
+      <p className="text-xl px-4 max-w-7xl mx-auto md:text-6xl font-black pb-4 text-center bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+        {title || `KAMI MERANGKUL SEMUA PEMALAS YANG ADA DI MUKA BUMI INI`}
       </p>
-      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
+      {/* <p className="text-xs md:text-xl font-bold text-center text-foreground/70 tracking-widest mt-4 max-w-lg mx-auto">
         {description ||
-          `Mending scroll fesnuk!`}
-      </p>
-      <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
+          `Tanpa Terkecuali!`}
+      </p> */}
+      <div className="w-full h-[890px] -top-60 md:-top-40 flex items-center justify-center bg-red-transparent absolute ">
         {/* <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
           IMPHNEN
         </button> */}
-        <Image className="z-20 mx-auto w-fit mt-20" src="/imphnen.webp" alt="logo" width="320" height="320"/>
+        <Image className="z-20 mx-auto md:w-64 mt-10 md:mt-24 w-24" src="/imphnen.webp" alt="logo" width="500" height="500"/>
       </div>
       <svg
         width="1440"
