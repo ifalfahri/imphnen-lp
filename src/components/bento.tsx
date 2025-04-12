@@ -109,7 +109,7 @@ const SkeletonTwo = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1  h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
       {arr.map((_, i) => (
         <motion.div
@@ -295,10 +295,10 @@ const SkeletonFive = () => {
 };
 const items = [
   {
-    title: "AI Content Generation",
+    title: "Ahli Vibe Coding",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        Kita memperbudak AI agar kita tidak perlu ngoding.
       </span>
     ),
     header: <SkeletonOne />,
@@ -306,10 +306,10 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Automated Proofreading",
+    title: "Persembunyian Sepuh",
     description: (
       <span className="text-sm">
-        Let AI handle the proofreading of your documents.
+        Sulit membedakan yang beneran malas sama yang pura-pura.
       </span>
     ),
     header: <SkeletonTwo />,
@@ -317,10 +317,10 @@ const items = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Contextual Suggestions",
+    title: "Raja Scroll Fesnuk",
     description: (
       <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
+        Scroll Fesnuk paling minimal 25 jam per hari.
       </span>
     ),
     header: <SkeletonThree />,
@@ -328,10 +328,10 @@ const items = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Gudang Drama Lucu dan Menarik",
     description: (
       <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+        Selalu ada drama panas setiap waktu di sini. Bisa menjadi pengingat kita untuk hati-hati dalam bertindak agar tidak vimral.
       </span>
     ),
     header: <SkeletonFour />,
@@ -340,10 +340,10 @@ const items = [
   },
 
   {
-    title: "Text Summarization",
+    title: "mY kisah",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        Berbagai jenis manusia dengan berbagai bahasa andalannya.
       </span>
     ),
     header: <SkeletonFive />,
