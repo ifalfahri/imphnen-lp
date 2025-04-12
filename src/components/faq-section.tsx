@@ -51,9 +51,9 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
 export function FAQSection() {
   return (
-    <div className="py-24 px-4 max-w-4xl mx-auto" id="faq">
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
-        Pertanyaan yang Sering Dimalas-malaskan untuk Ditanyakan
+    <div className="py-48 px-4 max-w-4xl mx-auto min-h-screen" id="faq">
+      <h2 className="text-3xl md:text-7xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+        FAQ
       </h2>
       <p className="text-sm md:text-lg text-center text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl mx-auto">
         Beberapa pertanyaan yang akan dijawab kalau kami tidak sedang scroll
