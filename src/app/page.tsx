@@ -1,7 +1,9 @@
+import { GeminiSection } from "@/components/gemini-section";
+
 export default function Home() {
   return (
     <div>
-      <h1>IMPHNEN</h1>
+      <GeminiSection />
     </div>
   );
 }
