@@ -3,11 +3,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Background } from "@/components/background";
 
-const dmSans = Poppins({
+const poppins = Poppins({
   weight: ["300","400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${dmSans.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning className={`${poppins.variable} antialiased`}>
       <body className="font-sans">
         <ThemeProvider
           attribute="class"
@@ -30,6 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Nav />
+          <Background />
           {children}
         </ThemeProvider>
       </body>
