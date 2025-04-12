@@ -10,7 +10,7 @@ export function HeroScroll() {
       <ContainerScroll
         titleComponent={
           <>
-            <Badge variant="outline" className="-top-4 py-1 px-3 font-medium relative gap-1.5 rounded-full bg-gradient-to-r from-emerald-500/30 to-emerald-500/20">
+            <Badge variant="outline" className="-top-4 py-1 px-3 font-medium hover:animate-bounce cursor-default relative gap-1.5 rounded-full bg-gradient-to-r from-emerald-500/30 to-emerald-500/20">
               <span
                 className="size-1.5 rounded-full bg-emerald-500"
                 aria-hidden="true"
@@ -19,7 +19,7 @@ export function HeroScroll() {
             </Badge>
             <h1 className="text-xl relative md:text-4xl font-semibold text-black dark:text-white">
               Jadilah Programmer Handal <br />
-              <span className="left-3/7 top-2/6 md:top-1/4 rotate-6 absolute bg-primary text-sm md:text-3xl text-white pb-1 md:pb-2 px-2 md:px-3">yang</span>
+              <span className="left-3/7 top-2/6 md:top-1/4 rotate-6 absolute bg-primary text-sm md:text-3xl cursor-default hover:rotate-12 transition-transform text-white pb-1 md:pb-2 px-2 md:px-3">yang</span>
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                 Enggan Ngoding
               </span>
