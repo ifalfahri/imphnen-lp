@@ -11,8 +11,8 @@ const dmSans = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "IMPHNEN",
-  description: "Ingin Menjadi Programmer Handal Namun Enggan Ngoding",
+  title: "IMPHNEN | Ingin Menjadi Programmer Handal Namun Enggan Ngoding",
+  description: "Ingin Menjadi Programmer Handal Namun Enggan Ngoding adalah komunitas perkumpulan sepuh-sepuh yang pura-pura malas ngoding, padahal jago banget.",
 };
 
 export default function RootLayout({
