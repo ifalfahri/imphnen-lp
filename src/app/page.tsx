@@ -1,8 +1,9 @@
 import { Bento } from "@/components/bento";
+import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { GeminiSection } from "@/components/gemini-section";
-import RibbonSection from "@/components/ribbon-section";
 import { HeroScroll } from "@/components/hero-scroll";
+import RibbonSection from "@/components/ribbon-section";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <RibbonSection />
       <Bento />
       <GeminiSection />
+      <FAQSection />
       <Footer />
     </div>
   );

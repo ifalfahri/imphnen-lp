@@ -6,7 +6,7 @@ import { Badge } from "./ui/badge";
 
 export function HeroScroll() {
   return (
-    <div className="flex flex-col overflow-hidden relative z-1">
+    <div id="home" className="flex flex-col overflow-hidden relative z-1">
       <ContainerScroll
         titleComponent={
           <>
