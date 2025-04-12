@@ -1,16 +1,26 @@
 "use client";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
   Navbar,
+  NavbarLogo,
   NavBody,
   NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
 } from "@/components/ui/navbar";
+import Link from "next/link";
 import { useState } from "react";
+import { FaDiscord } from "react-icons/fa";
+import { RiFacebookFill } from "react-icons/ri";
+import { Button, buttonVariants } from "./ui/button";
+import { ModeToggle } from "./ui/mode-toggle";
 
 export function Nav() {
   const navItems = [
@@ -41,9 +51,35 @@ export function Nav() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+          <div className="flex items-center gap-2">
+            <ModeToggle />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="z-20">
+                  Gabung
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>
+                  <Link
+                    href="https://facebook.com/groups/programmerhandal"
+                    className="flex items-center gap-2 font-medium text-sm"
+                  >
+                    <RiFacebookFill className="text-blue-600" />
+                    Facebook
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    href="https://discord.com"
+                    className="flex items-center justify-center gap-2 font-medium text-sm"
+                  >
+                    <FaDiscord className="text-indigo-500" />
+                    Discord
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </NavBody>
 
@@ -71,21 +107,22 @@ export function Nav() {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
+            <div className="flex justify-center gap-4">
+              <Link
+                href="https://discord.com"
+                className={buttonVariants({ variant: "outline" }) + "flex items-center justify-center gap-2 font-medium text-sm"}
               >
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
+                <RiFacebookFill className="text-blue-600" />
+                Facebook
+              </Link>
+              <ModeToggle />
+              <Link
+                href="https://discord.com"
+                className={buttonVariants({ variant: "outline" }) + "flex items-center justify-center gap-2 font-medium text-sm"}
               >
-                Book a call
-              </NavbarButton>
+                <FaDiscord className="text-indigo-500" />
+                Discord
+              </Link>
             </div>
           </MobileNavMenu>
         </MobileNav>
