@@ -39,15 +39,15 @@ export function Footer() {
   ];
 
   const socialLinks = [
+      {
+        icon: <FaGithub className="w-5 h-5 text-foreground" />,
+        href: "https://github.com/ifalfahri/imphnen-lp",
+        label: "GitHub",
+      },
     {
       icon: <FaTwitter className="w-5 h-5 text-sky-400" />,
       href: "https://twitter.com",
       label: "Twitter",
-    },
-    {
-      icon: <FaGithub className="w-5 h-5 text-foreground" />,
-      href: "https://github.com/ifalfahri/imphnen-lp",
-      label: "GitHub",
     },
     {
       icon: <FaDiscord className="w-5 h-5 text-indigo-500" />,
@@ -64,13 +64,13 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
       <div className="container mx-auto px-4 py-12 md:px-10">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+        <div className="flex flex-col items-start justify-between gap-12 space-y-8 md:flex-row md:space-y-0">
           {/* Logo and Tagline */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center">
               <span className="text-xl font-bold">IMPHNEN</span>
             </Link>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-xs md:text-sm text-neutral-600 dark:text-neutral-400">
               Ingin Menjadi Programmer Handal Namun Enggan Ngoding
             </p>
             <div className="flex space-x-4 mt-4">
@@ -79,7 +79,7 @@ export function Footer() {
                   key={`social-${idx}`}
                   href={social.href}
                   aria-label={social.label}
-                  className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+                  className="text-neutral-600 hover:rotate-10 hover:scale-125 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
                 >
                   {social.icon}
                 </Link>
