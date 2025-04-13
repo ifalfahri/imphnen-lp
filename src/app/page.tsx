@@ -1,4 +1,5 @@
 import { Bento } from "@/components/bento";
+import { CTASection } from "@/components/cta-section";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { GeminiSection } from "@/components/gemini-section";
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroScroll />
       <RibbonSection />
       <Bento />
+      <CTASection />
       <GeminiSection />
       <StackingCard />
       <FAQSection />
