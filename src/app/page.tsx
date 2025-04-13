@@ -6,6 +6,7 @@ import { GeminiSection } from "@/components/gemini-section";
 import { HeroScroll } from "@/components/hero-scroll";
 import RibbonSection from "@/components/ribbon-section";
 import StackingCard from "@/components/ui/stacking-card";
+import {AnotherBento} from "@/components/another-bento";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <CTASection />
       <GeminiSection />
       <StackingCard />
+      <AnotherBento />
       <FAQSection />
       <Footer />
     </div>
