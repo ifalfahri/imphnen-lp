@@ -1,7 +1,8 @@
 "use client";
 import { IconChevronDown } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "motion/react";
-import React, { useState } from "react";
+import { AnimatePresence, motion, useInView } from "motion/react";
+import React, { useRef, useState } from "react";
+import { BoxReveal } from "./ui/box-reveal";
 
 interface FAQItemProps {
   question: string;
@@ -12,14 +13,17 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="faq" className="border border-neutral-200 dark:border-white/[0.2] rounded-xl overflow-hidden bg-white dark:bg-black mb-4 shadow-input transition-all duration-200 hover:shadow-lg">
+    <div
+      id="faq"
+      className="border border-neutral-200 dark:border-white/[0.2] rounded-xl overflow-hidden bg-white dark:bg-black mb-4 shadow-input dark:shadow-primary/20 transition-all duration-200 hover:shadow-lg"
+    >
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full p-4 text-left"
         whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.02)" }}
         whileTap={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
-        <h3 className="text-lg font-medium text-neutral-800 dark:text-neutral-200">
+        <h3 className="text-sm md:text-lg font-medium text-neutral-800 dark:text-neutral-200">
           {question}
         </h3>
         <motion.div
@@ -39,7 +43,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="p-4 pt-0 text-neutral-600 dark:text-neutral-400 text-sm bg-neutral-50 dark:bg-neutral-900/50">
+            <div className="p-4 pt-0 text-neutral-600 dark:text-neutral-400 md:text-sm text-xs bg-neutral-50 dark:bg-neutral-900/50">
               {answer}
             </div>
           </motion.div>
@@ -50,19 +54,49 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 };
 
 export function FAQSection() {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px -400px 0px",
+  });
+
   return (
-    <div className="py-48 px-4 max-w-4xl mx-auto min-h-screen" id="faq">
-      <h2 className="text-3xl md:text-7xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
-        FAQ
-      </h2>
-      <p className="text-sm md:text-lg text-center text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl mx-auto">
+    <div
+      className="py-48 px-4 max-w-4xl mx-auto min-h-screen"
+      id="faq"
+      ref={containerRef}
+    >
+      <BoxReveal>
+        <h2 className="text-3xl md:text-7xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+          FAQ
+        </h2>
+      </BoxReveal>
+      <p className="text-sm md:text-lg text-center text-neutral-600 dark:text-neutral-400 mb-12 mx-auto">
         Beberapa pertanyaan yang akan dijawab kalau kami tidak sedang scroll
         Fesnuk
       </p>
 
-      <div className="space-y-6">
+      <div className="space-y-2 md:space-y-4">
         {faqItems.map((item, index) => (
-          <FAQItem key={index} question={item.question} answer={item.answer} />
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={
+              isInView
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                    transition: {
+                      duration: 0.5,
+                      delay: index * 0.15, // Sequential delay based on item index
+                      ease: [0.22, 1, 0.36, 1], // Custom spring-like easing
+                    },
+                  }
+                : {}
+            }
+          >
+            <FAQItem question={item.question} answer={item.answer} />
+          </motion.div>
         ))}
       </div>
     </div>
@@ -102,7 +136,7 @@ const faqItems = [
           <li>
             Mengumpulkan tutorial programming yang tidak akan pernah kita tonton
           </li>
-          <li>Debat sengit React vs Vue meski belum mahir JavaScript dasar</li>
+          <li>Debat sengit JS vs PHP</li>
           <li>
             Workshop Cara Menginstal Visual Studio Code dan Tidak Pernah
             Membukanya Lagi
@@ -112,8 +146,7 @@ const faqItems = [
             Riset Pasar
           </li>
           <li>
-            Ajang Ngumpulin Repository GitHub tapi Commit Terakhir 2 Tahun
-            Lalu
+            Ajang Ngumpulin Repository GitHub tapi Commit Terakhir 2 Tahun Lalu
           </li>
           <li>
             Kompetisi Siapa yang bisa screenshot code terkeren untuk status WA
