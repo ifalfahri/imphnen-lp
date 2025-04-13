@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { motion, MotionValue } from "motion/react";
 import React from "react";
 import Image from "next/image";
+import { BoxReveal } from "./box-reveal";
 
 const transition = {
   duration: 0,
@@ -22,13 +23,17 @@ export const GeminiEffect = ({
 }) => {
   return (
     <div className={cn("sticky md:top-32 top-64", className)}>
-      <p className="text-4xl px-4 max-w-7xl mx-auto md:text-[5rem]  font-bold text-center bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+      <BoxReveal>
+      <p className="text-4xl px-4 max-w-7xl mx-auto md:text-[5rem] py-2 font-bold text-center bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
         {title || `Kami Merangkul`}
       </p>
-      <p className="text-sm md:text-3xl font-bold text-center text-foreground/70 mx-auto">
+      </BoxReveal>
+      <BoxReveal boxColor="#4c565c">
+      <p className="text-sm md:text-3xl font-bold text-center relative -z-1 text-foreground/70 mx-auto">
         {description ||
           `Semua Pemalas yang ada di Muka Bumi ini.`}
       </p>
+      </BoxReveal>
       <div className="w-full h-[890px] -top-60 md:-top-40 flex items-center justify-center bg-red-transparent absolute ">
         {/* <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
           IMPHNEN
