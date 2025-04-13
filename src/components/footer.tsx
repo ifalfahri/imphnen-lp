@@ -129,6 +129,13 @@ export function Footer() {
             </Link>
           </div>
         </div>
+        
+        {/* Full Width IMPHNEN Text */}
+        <div className="absolute left-0 mx-auto w-full overflow-hidden">
+          <h1 className="text-[22.7vw] font-extrabold tracking-tighter text-foreground/5">
+            IMPHNEN
+          </h1>
+        </div>
       </div>
     </footer>
   );
