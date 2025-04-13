@@ -44,6 +44,19 @@ export function Nav() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    if (href.startsWith('#')) {
+      import('@/lib/utils').then(({ scrollToElement }) => {
+        scrollToElement(href);
+        setIsMobileMenuOpen(false); // Close mobile menu after clicking
+      });
+    } else {
+      window.location.href = href;
+    }
+  };
+
   return (
     <div className="relative w-full">
       <Navbar>
@@ -101,7 +114,7 @@ export function Nav() {
               <a
                 key={`mobile-link-${idx}`}
                 href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleAnchorClick(e, item.link)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>

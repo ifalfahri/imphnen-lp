@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Background } from "@/components/background";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const poppins = Poppins({
   weight: ["300","400", "500", "600", "700", "800", "900"],
@@ -33,6 +34,8 @@ export default function RootLayout({
           <Nav />
           <Background />
           {children}
+          {/* Import the client component for smooth scrolling */}
+          <SmoothScroll />
         </ThemeProvider>
       </body>
     </html>

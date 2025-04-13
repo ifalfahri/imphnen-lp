@@ -115,6 +115,25 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // If the href is an anchor link, use smooth scrolling
+    if (href.startsWith('#')) {
+      import('@/lib/utils').then(({ scrollToElement }) => {
+        scrollToElement(href);
+      });
+    } else {
+      // For non-anchor links, use default navigation
+      window.location.href = href;
+    }
+    
+    // Call the onItemClick callback if provided
+    if (onItemClick) {
+      onItemClick();
+    }
+  };
+
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -126,7 +145,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       {items.map((item, idx) => (
         <Link
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
+          onClick={(e) => handleClick(e, item.link)}
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
           key={`link-${idx}`}
           href={item.link}
@@ -231,9 +250,18 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Link
       href="#"
+      onClick={handleLogoClick}
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
