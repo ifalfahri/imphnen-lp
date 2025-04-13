@@ -117,17 +117,12 @@ export const CTASection = () => {
                   <h3 className="text-3xl font-bold text-white mb-4">
                     Selamat!
                   </h3>
-                  <p className="text-md text-gray-200">
+                  
+                  <span className="text-9xl">💻</span>
+                  <div className="mt-6">
+                    <p className="text-md text-gray-200">
                     Kamu berhasil menemukan easter egg.
                   </p>
-                  <div className="mt-6">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-white text-white hover:bg-white hover:text-black"
-                    >
-                      Bergabung Sekarang
-                    </Button>
                   </div>
                 </div>
               </div>
