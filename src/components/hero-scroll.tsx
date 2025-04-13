@@ -3,6 +3,7 @@ import React from "react";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
+import { AnimatedShinyText } from "./ui/animated-shiny-text";
 
 export function HeroScroll() {
   return (
@@ -15,7 +16,7 @@ export function HeroScroll() {
                 className="size-1.5 rounded-full bg-emerald-500"
                 aria-hidden="true"
               ></span>
-             Terverifikasi Malas
+             <AnimatedShinyText>Terverifikasi Malas</AnimatedShinyText>
             </Badge>
             <h1 className="text-xl relative md:text-4xl font-semibold text-black dark:text-white">
               Jadilah Programmer Handal <br />
