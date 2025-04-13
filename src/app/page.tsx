@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { GeminiSection } from "@/components/gemini-section";
 import { HeroScroll } from "@/components/hero-scroll";
 import RibbonSection from "@/components/ribbon-section";
+import StackingCard from "@/components/ui/stacking-card";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <RibbonSection />
       <Bento />
       <GeminiSection />
+      <StackingCard />
       <FAQSection />
       <Footer />
     </div>
