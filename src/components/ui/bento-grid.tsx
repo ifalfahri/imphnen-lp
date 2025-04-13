@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 export const BentoGrid = ({
   className,
@@ -11,7 +12,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         "mx-auto grid max-w-7xl grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3",
-        className,
+        className
       )}
     >
       {children}
@@ -25,18 +26,34 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  index = 0,
+  isInView = false,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  index?: number;
+  isInView?: boolean;
 }) => {
   return (
-    <div id="features"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              transition: {
+                delay: index * 0.2, // Sequential delay based on item index
+                type: "spring",
+              },
+            }
+          : {}
+      }
       className={cn(
         "group/bento shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
-        className,
+        className
       )}
     >
       {header}
@@ -49,6 +66,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

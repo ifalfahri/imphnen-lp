@@ -1,7 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import {
   IconBoxAlignRightFilled,
   IconClipboardCopy,
@@ -9,23 +7,35 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
+import { useRef } from "react";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 export function Bento() {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, {
+    once: true,
+    margin: "0px 0px -200px 0px",
+  });
+
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+    <div ref={containerRef}>
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+            index={i}
+            isInView={isInView}
+          />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
 
@@ -280,7 +290,8 @@ const SkeletonFive = () => {
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-          Belajar framework JS apa lagi ya hari ini... React sama Next.js sih udah, tapi Svelte belom, eh iya Vue juga belom...
+          Belajar framework JS apa lagi ya hari ini... React sama Next.js sih
+          udah, tapi Svelte belom, eh iya Vue juga belom...
         </p>
       </motion.div>
       <motion.div
@@ -331,7 +342,8 @@ const items = [
     title: "Gudang Drama Lucu dan Menarik",
     description: (
       <span className="text-sm">
-        Selalu ada drama panas setiap waktu di sini. Bisa menjadi pengingat kita untuk hati-hati dalam bertindak agar tidak vimral.
+        Selalu ada drama panas setiap waktu di sini. Bisa menjadi pengingat kita
+        untuk hati-hati dalam bertindak agar tidak vimral.
       </span>
     ),
     header: <SkeletonFour />,
