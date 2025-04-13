@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { motion, MotionValue } from "motion/react";
 import React from "react";
 import Image from "next/image";
-import { BoxReveal } from "./box-reveal";
+import { TextAnimate } from "./text-animate";
 
 const transition = {
   duration: 0,
@@ -23,17 +23,15 @@ export const GeminiEffect = ({
 }) => {
   return (
     <div className={cn("sticky md:top-32 top-64", className)}>
-      <BoxReveal>
-      <p className="text-4xl px-4 max-w-7xl mx-auto md:text-[5rem] py-2 font-bold text-center bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+      
+      <TextAnimate animation="blurInUp" by="character" duration={0.8} as="h2" once className="text-4xl px-4 max-w-7xl mx-auto md:text-[5rem] py-2 font-bold text-center text-primary">
         {title || `Kami Merangkul`}
-      </p>
-      </BoxReveal>
-      <BoxReveal boxColor="#4c565c">
-      <p className="text-sm md:text-3xl font-bold text-center relative -z-1 text-foreground/70 mx-auto">
+      </TextAnimate>
+      
+      <TextAnimate animate="blurIn" delay={0.2} duration={0.8} by="character" as="p" className="text-sm md:text-3xl font-bold text-center relative -z-1 text-foreground/70 mx-auto">
         {description ||
           `Semua Pemalas yang ada di Muka Bumi ini.`}
-      </p>
-      </BoxReveal>
+      </TextAnimate>
       <div className="w-full h-[890px] -top-60 md:-top-40 flex items-center justify-center bg-red-transparent absolute ">
         {/* <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
           IMPHNEN
