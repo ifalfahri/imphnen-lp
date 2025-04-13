@@ -1,9 +1,8 @@
 "use client";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa";
 import { RiFacebookFill } from "react-icons/ri";
-import { buttonVariants } from "./ui/button";
+import { ConfettiButton } from "./ui/confetti-button";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -125,15 +124,9 @@ export function Footer() {
             . All rights reserved.
           </p>
           <div className="mt-4 flex space-x-4 md:mt-0">
-            <Link
-              href="#"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "sm" }),
-                "text-sm"
-              )}
-            >
+            <ConfettiButton>
               Bergabung dengan Kami
-            </Link>
+            </ConfettiButton>
           </div>
         </div>
 
