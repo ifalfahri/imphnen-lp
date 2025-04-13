@@ -9,29 +9,31 @@ import { BoxReveal } from "./ui/box-reveal";
 
 export const CTASection = () => {
   return (
-    <section className="pt-20">
-      <div className="container max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-10 items-center justify-between">
+    <section className="pt-40 pb-16">
+      <div className="container max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-0 items-stretch justify-between">
           <motion.div
-            className="lg:w-1/2 space-y-4 md:space-y-6 text-center lg:text-left"
+            className="lg:w-[60%] space-y-4 flex flex-col justify-between md:space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
+            <div className="gap-4 flex flex-col items-center lg:items-start">
             <BoxReveal>
-            <h2 className="text-3xl md:text-5xl mb-2 md:mb-4 font-bold text-primary">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary">
               Bergabunglah dengan{" "}
               <span className="text-primary-foreground">Komunitas Kami</span>
             </h2>
             </BoxReveal>
             <BoxReveal boxColor="#8a8a8a">
-            <p className="text-md md:text-lg text-muted-foreground mb-4 md:mb-6 max-w-xl">
-              Jadilah bagian dari komunitas terbesar di Indonesia. Dapatkan
-              akses eksklusif, berbagi pengetahuan, dan terhubung dengan para
-              ahli dan sesama pengguna.
+            <p className="text-md md:text-lg w-full text-muted-foreground max-w-xl">
+              Jadilah bagian dari komunitas termalas di Indonesia. Dapatkan
+              akses fesnuk, berbagi pengetahuan tentang ngoding (dikit), dan terhubung dengan para
+              ahli yapping.
             </p>
             </BoxReveal>
+            </div>
 
             <div className="flex flex-row gap-4 md:gap-12 items-center sm:items-start justify-center lg:justify-start">
               <div className="text-center md:text-left">
@@ -52,7 +54,7 @@ export const CTASection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-2 md:gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
                 asChild
@@ -106,9 +108,9 @@ export const CTASection = () => {
             viewport={{ once: true }}
           >
             <ScratchToReveal
-              width={400}
-              height={400}
-              className="rounded-2xl overflow-hidden shadow-xl"
+              width={350}
+              height={350}
+              className="rounded-2xl mx-auto overflow-hidden shadow-xl"
               gradientColors={["#4F46E5", "#EC4899", "#F97316"]}
               minScratchPercentage={40}
             >
@@ -120,8 +122,8 @@ export const CTASection = () => {
                   
                   <span className="text-9xl">💻</span>
                   <div className="mt-6">
-                    <p className="text-md text-gray-200">
-                    Kamu berhasil menemukan easter egg.
+                    <p className="text-[0.95rem] text-gray-200">
+                    Kamu berhasil menemukan easter egg. Kamu berhak mendapatkan ucapan selamat, hore!
                   </p>
                   </div>
                 </div>

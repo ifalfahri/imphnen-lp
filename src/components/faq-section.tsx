@@ -61,15 +61,17 @@ export function FAQSection() {
 
   return (
     <div
-      className="py-48 px-4 max-w-4xl mx-auto min-h-screen"
+      className="pb-48 px-4 max-w-5xl mx-auto min-h-screen"
       id="faq"
       ref={containerRef}
     >
+        <div className="flex flex-col items-center">
       <BoxReveal>
-        <h2 className="text-3xl md:text-7xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
+        <h2 className="mx-auto text-3xl md:text-7xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-bl from-primary to-primary-foreground">
           FAQ
         </h2>
       </BoxReveal>
+      </div>
       <p className="text-sm md:text-lg text-center text-neutral-600 dark:text-neutral-400 mb-12 mx-auto">
         Beberapa pertanyaan yang akan dijawab kalau kami tidak sedang scroll
         Fesnuk
@@ -104,9 +106,9 @@ export function FAQSection() {
 
 const faqItems = [
   {
-    question: "Apa sih IMPHNEN itu? Kepanjangan dari apa?",
+    question: "Apa sih IMPHNEN itu?",
     answer:
-      "IMPHNEN singkatan dari 'Ingin Menjadi Programmer Handal Namun Enggan Ngoding'. Kami adalah komunitas elit para profesional scroll Fesnuk yang punya mimpi jadi tech bro/sis tapi ngodingnya nanti aja kalau mood. Motto kami: 'Kenapa capek-capek ngoding kalau bisa tinggal tanya ChatGPT?'",
+      "IMPHNEN adalah singkatan dari 'Ingin Menjadi Programmer Handal Namun Enggan Ngoding'. Kami adalah komunitas elit para profesional scroll Fesnuk yang punya mimpi jadi tech bro/sis tapi ngodingnya nanti aja kalau mood. Motto kami: 'Kenapa capek-capek ngoding kalau bisa tinggal tanya ChatGPT?'",
   },
   {
     question: "Gimana cara join komunitas pemalas ini?",
