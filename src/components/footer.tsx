@@ -61,7 +61,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full h-[150vh] md:min-h-screen  border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+    <footer className="w-full md:min-h-screen  border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
       <div className="container mx-auto px-4 py-12 md:px-10">
         <div className="flex flex-col items-start justify-between gap-12 space-y-8 md:flex-row md:space-y-0">
           {/* Logo and Tagline */}
