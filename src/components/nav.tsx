@@ -44,11 +44,14 @@ export function Nav() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
-    
-    if (href.startsWith('#')) {
-      import('@/lib/utils').then(({ scrollToElement }) => {
+
+    if (href.startsWith("#")) {
+      import("@/lib/utils").then(({ scrollToElement }) => {
         scrollToElement(href);
         setIsMobileMenuOpen(false); // Close mobile menu after clicking
       });
@@ -123,7 +126,10 @@ export function Nav() {
             <div className="flex justify-center gap-4">
               <Link
                 href="https://discord.com"
-                className={buttonVariants({ variant: "outline" }) + "flex items-center justify-center gap-2 font-medium text-sm"}
+                className={
+                  buttonVariants({ variant: "outline" }) +
+                  "flex items-center justify-center gap-2 font-medium text-sm"
+                }
               >
                 <RiFacebookFill className="text-blue-600" />
                 Facebook
@@ -131,7 +137,10 @@ export function Nav() {
               <ModeToggle />
               <Link
                 href="https://discord.com"
-                className={buttonVariants({ variant: "outline" }) + "flex items-center justify-center gap-2 font-medium text-sm"}
+                className={
+                  buttonVariants({ variant: "outline" }) +
+                  "flex items-center justify-center gap-2 font-medium text-sm"
+                }
               >
                 <FaDiscord className="text-indigo-500" />
                 Discord
