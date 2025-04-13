@@ -58,6 +58,8 @@ export const ContainerScroll = ({
 export const Header = ({ translate, titleComponent }: any) => {
   return (
     <motion.div
+        initial={{ opacity: 0, translateY: -100 }}
+        animate={{ opacity: 100, translateY: 0 }}
       style={{
         translateY: translate,
       }}
@@ -80,6 +82,12 @@ export const Card = ({
 }) => {
   return (
     <motion.div
+        initial={{ opacity: 0, translateY: 20 }}
+        animate={{ opacity: 100, translateY: 0 }}
+        transition={{ 
+            duration: 1,
+            type: "spring",
+        }}
       style={{
         rotateX: rotate,
         scale,
