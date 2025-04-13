@@ -14,7 +14,6 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
   return (
     <div
-      id="faq"
       className="border border-neutral-200 dark:border-white/[0.2] rounded-xl overflow-hidden bg-white dark:bg-black mb-4 shadow-input dark:shadow-primary/20 transition-all duration-200 hover:shadow-lg"
     >
       <motion.button
