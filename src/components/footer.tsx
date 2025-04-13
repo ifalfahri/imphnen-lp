@@ -115,7 +115,14 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-10 flex flex-col items-center justify-between border-t border-neutral-200 pt-6 dark:border-neutral-800 md:flex-row">
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            &copy; {currentYear} IMPHNEN Landing Page. Made by <Link className="hover:text-primary transition-colors" href="https://ifal.me">Aldo</Link>. All rights reserved.
+            &copy; {currentYear} IMPHNEN Landing Page. Made by{" "}
+            <Link
+              className="hover:text-primary transition-colors"
+              href="https://ifal.me"
+            >
+              Aldo
+            </Link>
+            . All rights reserved.
           </p>
           <div className="mt-4 flex space-x-4 md:mt-0">
             <Link
@@ -129,7 +136,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        
+
         {/* Full Width IMPHNEN Text */}
         <div className="absolute left-0 mx-auto w-full overflow-hidden">
           <h1 className="text-[22.7vw] font-extrabold tracking-tighter text-foreground/5">
